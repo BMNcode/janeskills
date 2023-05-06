@@ -1,0 +1,18 @@
+spring:
+  jooq:
+    sql-dialect: postgres
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${PG_HOST:localhost}:${PG_PORT:5432}/${PG_DB_NAME:janeskills}
+    username: ${PG_USERNAME:postgres}
+    password: ${PG_PASSWORD:postgres}
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.xml
+
+google:
+  cred-file-path: ${GOOGLE_CRED_FILE_PATH:/etc/ssl/certs/credentials.json}
+  app-name: ${GOOGLE_APP_NAME:default}
+  tokens: ${GOOGLE_TOKENS:tokens}
+  spread-sheets-id: ${GOOGLE_SPREAD_SHEETS_ID:default}
+  api-key: ${GOOGLE_API_KEY:default}
+

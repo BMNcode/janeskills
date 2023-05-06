@@ -21,7 +21,22 @@ repositories {
 }
 
 dependencies {
+
+	annotationProcessor "org.projectlombok:lombok",
+			"org.mapstruct:mapstruct-processor:1.5.1.Final",
+			"org.projectlombok:lombok-mapstruct-binding:0.2.0",
+			"org.springframework.boot:spring-boot-configuration-processor"
+
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+	implementation 'org.liquibase:liquibase-core:4.19.0'
+	implementation 'com.google.api-client:google-api-client:1.15.0-rc'
+	implementation 'com.google.oauth-client:google-oauth-client-jetty:1.34.1'
+	implementation 'com.google.apis:google-api-services-sheets:v4-rev614-1.18.0-rc'
+	implementation group: 'org.mapstruct', name: 'mapstruct', version: '1.5.1.Final'
+
+	runtimeOnly 'org.postgresql:postgresql'
+
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
